@@ -51,6 +51,7 @@ create table public.respostas_inspecao (
   descricao_item text not null,
   secao text not null, -- comuns, caminhao, maquina, apoio ou funcional
   resposta public.situacao_resposta not null,
+  detalhes jsonb not null default '{}'::jsonb,
   criada_em timestamptz not null default now(),
   unique (inspecao_id, codigo_item)
 );
