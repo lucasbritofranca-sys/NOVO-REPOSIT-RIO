@@ -1,6 +1,6 @@
 -- Solicita cadastro de um usuário de teste pelo endpoint público de signup.
 -- Execute uma única vez no SQL Editor do projeto Supabase.
--- Conta de teste solicitada. Confirme o endereço pelo e-mail, se o projeto exigir.
+-- Antes de executar, substitua EMAIL_DA_CONTA e SENHA_FORTE pelos dados desejados.
 -- Se a confirmação de e-mail estiver ativa, confirme a conta pelo link enviado
 -- antes de entrar no sistema. Este fluxo respeita a configuração de Auth do projeto.
 
@@ -13,8 +13,8 @@ select net.http_post(
     'apikey', 'sb_publishable_EA7Kn6T0TjR6sH9muN5l4Q_KVrdpul8'
   ),
   body := jsonb_build_object(
-    'email', 'lucasbrfranca@gmail.com',
-    'password', 'Frota-Teste-2026!Mineracao',
+    'email', 'EMAIL_DA_CONTA',
+    'password', 'SENHA_FORTE',
     'data', jsonb_build_object('nome', 'Usuário de teste')
   ),
   timeout_milliseconds := 10000
